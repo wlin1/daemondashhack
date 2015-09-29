@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<head>
+
+<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
+<script>
+$(function () {
+    $('#container').highcharts({
+        chart: {
+            type: 'spline',
+			backgroundColor:'transparent'
+        },
+        title: {
+            text: 'jetBlue Total Operating Revenue'
+        },
+        subtitle: {
+            text: '1995 - 2014'
+        },
+        xAxis: {
+            categories: ['1995','1996','1997','1998','1999','2000','2001','2002','2003','2004','2005','2006','2007','2008','2009','2010','2011','2012','2013','2014']
+        },
+        yAxis: {
+            title: {
+                text: 'Billions of $'
+            },
+            labels: {
+                formatter: function () {
+                    return '$'+this.value;
+                }
+            }
+        },
+        tooltip: {
+            crosshairs: true,
+            shared: true
+        },
+        plotOptions: {
+            spline: {
+                marker: {
+                    radius: 4,
+                    lineColor: '#666666',
+                    lineWidth: 1
+                }
+            },
+			series:{
+				color: '#B5CA92'
+			}
+        },
+        series: [{
+            name: 'jetBlue',
+            marker: {
+                symbol: 'square'
+            },
+            data: [null, null, null, null, null, 0.11, 0.32, 0.64, 1.00, 1.27, 1.70, 2.36, 2.84, 3.39, 3.29, 4.51, 4.98, 5.44, 5.82,{
+                y: 5.82,
+                marker: {
+                    symbol: 'url(images/Daemon/jetblue.png)'
+
+                }
+            }, ]
+
+        }]
+    });
+});
+
+</script>
+
+</head>
+<style>
+body {background-image: url("images/Daemon/skies2.jpg");
+		background-size: 100% 150%;}
+</style>
+<head>
+<title>jetBlue - Airline Operating Revenue Data</title>
+</head>
+<body>
+
+<script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="http://code.highcharts.com/modules/exporting.js"></script>
+<script src="http://code.highcharts.com/highcharts-3d.js"></script>
+<div id="container" style="width: 100%; height: 750px; margin: 0 auto"></div>
+
+
+</body>
+
+</html>
